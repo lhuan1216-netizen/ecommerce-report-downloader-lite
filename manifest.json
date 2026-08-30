@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "E-commerce Report Downloader Lite",
+  "version": "0.1.0",
+  "description": "在已登录的生意参谋页面中下载商品排行报表，支持状态恢复、重试和下载完成检测。",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "alarms",
+    "downloads",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://sycm.taobao.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "生意参谋报表下载器",
+    "default_popup": "src/popup.html"
+  }
+}

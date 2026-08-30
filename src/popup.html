@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>生意参谋报表下载器</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <h1>商品报表下载器</h1>
+      <p class="hint">仅在 sycm.taobao.com 运行，不保存登录凭据。</p>
+
+      <label for="account-name">账号/店铺名称</label>
+      <input id="account-name" type="text" maxlength="60" placeholder="例如：libbetter 旗舰店">
+
+      <label for="preset">报表周期</label>
+      <select id="preset">
+        <option value="recent7">近 7 天</option>
+        <option value="recent30">近 30 天</option>
+        <option value="yesterday">昨天</option>
+        <option value="custom">自定义日期</option>
+      </select>
+
+      <div id="custom-date-row" class="custom-date" hidden>
+        <label for="custom-date">选择日期</label>
+        <input id="custom-date" type="date">
+      </div>
+
+      <div class="actions">
+        <button id="start" class="primary">开始下载</button>
+        <button id="resume">继续任务</button>
+        <button id="inspect">检查当前页面</button>
+        <button id="cancel" class="danger">取消</button>
+      </div>
+
+      <section>
+        <h2>状态</h2>
+        <div id="status" class="status">尚未启动</div>
+        <div id="error" class="error" hidden></div>
+      </section>
+
+      <section>
+        <h2>最近记录</h2>
+        <ol id="logs" class="logs"></ol>
+      </section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
